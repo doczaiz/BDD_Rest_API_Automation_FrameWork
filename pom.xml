@@ -385,8 +385,8 @@
                     </includes>
                     <suiteXmlFiles>
                         <suiteXmlFile>target/test-classes/RegressionTestRunner.xml</suiteXmlFile>
-                        <!--                        <suiteXmlFile>target/test-classes/TargetSmokeTestRunner.xml</suiteXmlFile>-->
-                        <!--                        <suiteXmlFile>target/test-classes/TargetTestRunner.xml</suiteXmlFile>-->
+                                                <suiteXmlFile>target/test-classes/SmokeTestRunner.xml</suiteXmlFile>
+                                                <suiteXmlFile>target/test-classes/IntegrationTestRunner.xml</suiteXmlFile>
 
                     </suiteXmlFiles>
                 </configuration>

@@ -1,6 +1,6 @@
 Feature: Updates a current booking
 
-  @Rachido
+  @Integration
   Scenario Outline: Updates an existing booking in the API successfully
     Given the API endpoint for updating a booking
     When I send a Put request to update a booking with <firstname>, <lastname>, <checkIn>, and <checkout>
@@ -12,7 +12,7 @@ Feature: Updates a current booking
       | firstname | lastname | checkIn    | checkout   |
       | Joud      | Zaizouny | 2024-01-01 | 2024-01-03 |
 
-  @Rachido
+  @Integration
   Scenario Outline: Partial Update Booking
     Given the API endpoint for updating a booking
     When I send a Patch request to update a booking with <firstname> and <lastname>
