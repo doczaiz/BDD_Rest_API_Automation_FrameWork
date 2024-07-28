@@ -1,6 +1,8 @@
 package org.example.configaration.utilities;
 
+import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.apache.poi.ss.usermodel.*;
+import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 import java.io.FileInputStream;
@@ -10,11 +12,36 @@ import java.util.Iterator;
 
 public class ReadFromExcel {
 
-    public static void main(String[] args) {
-        String filetPath = "../LearnJava_QE_SUMMER2023/DataTest/Data.xlsx";
-      //  readExcelFile(filetPath,1);
-     //   readExcelFile(filetPath,0);
+    public static void main(String[] args) throws IOException {
+        String filetPath = "../BDD_Rest_API_Automation_FrameWork/DataTest/Data.xlsx";
+        String excelPath = "./DataTest/Book.xlsx";
+        readExcelFile(filetPath,0);
+//        readExcelFile(filetPath,0);
         readExcelFile1(filetPath,0);
+        getRowCount(excelPath,0);
+        getCellValue(excelPath,"Sheet1",0,1);
+    }
+
+
+    public static void getRowCount(String filePath, int sheetIndex) throws IOException {
+
+        XSSFWorkbook workbook = new XSSFWorkbook(filePath);
+        XSSFSheet sheet = workbook.getSheetAt(0);
+        int rowCount = sheet.getPhysicalNumberOfRows();
+
+//        String value = sheet.getRow(1).getCell(0).getStringCellValue();
+        System.out.println("No of Rows: "+rowCount);
+
+    }
+    public static void getCellValue(String filePath, String sheetName,int rowIndex,int cellIndex) throws IOException {
+         XSSFWorkbook workbook = new XSSFWorkbook(filePath);
+         XSSFSheet sheet = workbook.getSheet(sheetName);
+         DataFormatter formatter = new DataFormatter();
+         Object value = formatter.formatCellValue(sheet.getRow(rowIndex).getCell(cellIndex));
+//        String value0 = sheet.getRow(rowIndex).getCell(cellIndex).getStringCellValue();
+//        String value2 = sheet.getRow(1).getCell(0).getStringCellValue();
+        System.out.println("Row 0 Value : "+ value);
+//        System.out.println("Row 1 Value : "+ value2);
 
     }
 
@@ -51,8 +78,6 @@ public class ReadFromExcel {
         } catch (IOException e) {
             System.out.println("IOException "+e.getMessage());
         }
-
-
     }
 
 

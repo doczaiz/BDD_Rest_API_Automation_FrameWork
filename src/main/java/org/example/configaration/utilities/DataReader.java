@@ -7,7 +7,7 @@ import java.io.IOException;
 
 public class DataReader {
 
-    public static String relativePath = "../BDD-REST_API_Automation_Framework_QE_SUMMER2023/DataTest/Sample.txt";
+    public static String relativePath = "../BDD-REST_API_Automation_Framework/DataTest/Sample.txt";
 
 
     public static void main(String[] args) {
